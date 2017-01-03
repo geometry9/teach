@@ -1,0 +1,27 @@
+.main-content {
+  .registrants {
+		padding: 30px;
+		background: #fff;
+		border: 1px solid #ccc;
+  }
+  .registrants-list{
+    list-style: none;
+    padding-left: 0;
+  }
+  .glyphicon-align-justify{
+    margin-right: 20px;
+  }
+  .glyphicon-remove{
+    float: right;
+  }
+  .empty-list{
+    text-align: center;
+    width: 100%;
+    height: 270px;
+    border: 1px dashed #d8d8d8;
+    .empty-text{
+      line-height: 270px;
+      color: #d8d8d8
+    }
+  }
+}

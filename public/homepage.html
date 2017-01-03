@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Teachable Test</title>
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="assets/css/lib/ng-sortable.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js" type="text/javascript"></script>
+    <script src="assets/js/lib/ng-sortable.js" type="text/javascript"></script>
+    <script src="assets/js/app.js" type="text/javascript"></script>
+    <script src="assets/js/maincontroller.js" type="text/javascript"></script>
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body ng-app="RegistrantApp" ng-controller='MainController'>
+    <header>
+	    <h1>Teachable Test</h1>
+    </header>
+    <main>
+	    <div class="container">
+        <div ng-if="alert" class="alert" role="alert">{{ alert }}</div>
+	    	<div class="row">
+	    		<div class="add-registrant sidebar-left col-xs-12 col-sm-4">
+            <h3>Add attendee</h3>
+	    			<form class="registrant-form">
+						  <input ng-model="newRegistrant.name" class="text-field" type="text" name="username" placeholder="username">
+						  <input ng-model="newRegistrant.email" class="text-field" type="text" name="email" placeholder="email">
+						  <input ng-click="addRegistrant()" class="form-submit btn" type="submit" value="ADD ATTENDEE">
+						</form>
+
+    			</div>
+	    		<div class="main-content col-xs-12 col-sm-8">
+
+            <div class="registrants">
+              <h3>Attendee List</h3>
+              <ul ng-if="registrants.length" class="registrants-list" data-as-sortable="board.dragControlListeners" data-ng-model="registrants">
+                <li ng-repeat="registrant in registrants" data-as-sortable-item>
+                  <div class="panel panel-default">
+                    <div class="panel-body">
+                      <span class="glyphicon glyphicon-align-justify" aria-hidden="true" data-as-sortable-item-handle></span>
+                      {{registrant.email}}
+                      <span ng-click="removeRegistrant(registrant.email)" class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                    </div>
+                  </div>
+                </li>
+  	    			</ul>
+              <div ng-if="!registrants.length" class="empty-list">
+                <span class="empty-text">Add Attendees</span>
+              </div>
+            </div>
+
+	    		</div>
+	    	</div>
+	    </div>
+    </main>
+    <footer>
+
+    </footer>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+  </body>
+</html>

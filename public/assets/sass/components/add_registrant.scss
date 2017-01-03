@@ -1,0 +1,27 @@
+.add-registrant{
+  margin-bottom: 20px;
+  padding: 30px;
+  background: #fff;
+  border: 1px solid #ccc;
+  form.registrant-form {
+    input.text-field, input.form-submit {
+    	width: 100%;
+    	margin-bottom: 10px;
+    }
+    input.text-field{
+      padding: 5px;
+    }
+    input.form-submit{
+      text-transform: capitalize;
+      background: #2AA070;
+      color: #fff;
+      padding: 12px;
+      font-weight: 200;
+    }
+  }
+}
+.alert {
+  background: #2AA070;
+  padding: 20px;
+  color: #fff;
+}
